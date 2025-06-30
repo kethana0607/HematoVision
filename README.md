@@ -1,5 +1,4 @@
-🩸 HematoVision – AI-Powered Blood Cell Classifier
- ### 🔗 [Website Link](https://kethana0607.github.io/HematoVision/)
+ ### 🔗 [🩸 HematoVision – AI-Powered Blood Cell Classifier](https://kethana0607.github.io/HematoVision/)
 
     Project Type: Full-Stack Web Application
     Domain: Healthcare, Medical Imaging, Artificial Intelligence
