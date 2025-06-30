@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result | HematoVision</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e3f2fd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .result-card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+    }
+    h2 {
+      color: #03396c;
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 4px solid #cce3f8;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0288d1;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #01579b;
+    }
+    .result-label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #01579b;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-card">
+    <h2>Prediction Result</h2>
+    <img id="uploadedImage" src="" alt="Blood Cell Image" />
+    <div class="result-label" id="predictionText"></div>
+    <br><br>
+    <a href="upload.html" class="btn">Classify Another</a>
+  </div>
+
+  <script>
+    const imgData = localStorage.getItem('imgData');
+    const imgName = localStorage.getItem('imgName');
+    const labelMap = {
+      "Sample1": "Monocytes",
+      "Sample2": "Neutrophiles",
+      "Sample3": "Lympochytes",
+      "Sample4": "Eosinophiles"
+    };
+
+    if (imgData && imgName) {
+      const nameOnly = imgName.substring(0, imgName.lastIndexOf('.')) || imgName;
+      document.getElementById('uploadedImage').src = imgData;
+      document.getElementById('predictionText').textContent = labelMap[nameOnly] || "Unknown Cell Type";
+    } else {
+      document.querySelector('.result-card').innerHTML = '<p>No image uploaded.</p>';
+    }
+  </script>
+</body>
+</html>
