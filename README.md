@@ -1,7 +1,7 @@
 🩸 HematoVision – AI-Powered Blood Cell Classifier
 
-Project Type: Full-Stack Web Application
-Domain: Healthcare, Medical Imaging, Artificial Intelligence
+    Project Type: Full-Stack Web Application
+    Domain: Healthcare, Medical Imaging, Artificial Intelligence
 
 🧠 Objective :
 
